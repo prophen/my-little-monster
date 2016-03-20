@@ -18,6 +18,7 @@
 		E63C40631C941A1B002FC0F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E63C40621C941A1B002FC0F2 /* Assets.xcassets */; };
 		E63C40661C941A1B002FC0F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E63C40641C941A1B002FC0F2 /* LaunchScreen.storyboard */; };
 		E63C406E1C9426DA002FC0F2 /* DragImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = E63C406D1C9426DA002FC0F2 /* DragImg.swift */; };
+		E678D8761C9E7ECE00B91E58 /* whistle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E678D8751C9E7ECE00B91E58 /* whistle.mp3 */; };
 		E682B99B1C9558E900819B6D /* MonsterImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = E682B99A1C9558E900819B6D /* MonsterImg.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		E63C40651C941A1B002FC0F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E63C40671C941A1B002FC0F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E63C406D1C9426DA002FC0F2 /* DragImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragImg.swift; sourceTree = "<group>"; };
+		E678D8751C9E7ECE00B91E58 /* whistle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = whistle.mp3; sourceTree = "<group>"; };
 		E682B99A1C9558E900819B6D /* MonsterImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterImg.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -68,6 +70,7 @@
 		E63C405A1C941A1B002FC0F2 /* mylittlemonster */ = {
 			isa = PBXGroup;
 			children = (
+				E678D8751C9E7ECE00B91E58 /* whistle.mp3 */,
 				E60064E91C977D41004A2AB4 /* bite.wav */,
 				E60064EA1C977D41004A2AB4 /* cave-music.mp3 */,
 				E60064EB1C977D41004A2AB4 /* death.wav */,
@@ -148,6 +151,7 @@
 				E60064F01C977D41004A2AB4 /* death.wav in Resources */,
 				E60064F11C977D41004A2AB4 /* heart.wav in Resources */,
 				E60064EF1C977D41004A2AB4 /* cave-music.mp3 in Resources */,
+				E678D8761C9E7ECE00B91E58 /* whistle.mp3 in Resources */,
 				E63C40661C941A1B002FC0F2 /* LaunchScreen.storyboard in Resources */,
 				E63C40631C941A1B002FC0F2 /* Assets.xcassets in Resources */,
 				E63C40611C941A1B002FC0F2 /* Main.storyboard in Resources */,

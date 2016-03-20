@@ -131,13 +131,15 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="whistle" translatesAutoresizingMaskIntoConstraints="NO" id="isC-yP-9Vs" customClass="DragImg" customModule="mylittlemonster" customModuleProvider="target">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" ambiguous="YES" misplaced="YES" image="whistle" translatesAutoresizingMaskIntoConstraints="NO" id="isC-yP-9Vs" customClass="DragImg" customModule="mylittlemonster" customModuleProvider="target">
                                         <rect key="frame" x="120" y="0.0" width="110" height="154"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="110" id="Yon-rV-miB"/>
                                         </constraints>
-                                        <variation key="heightClass=compact" ambiguous="YES" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="90" width="96" height="112"/>
+                                        <variation key="heightClass=compact">
+                                            <mask key="constraints">
+                                                <exclude reference="Yon-rV-miB"/>
+                                            </mask>
                                         </variation>
                                     </imageView>
                                     <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="iq9-v3-cgp" customClass="DragImg" customModule="mylittlemonster" customModuleProvider="target">
@@ -150,8 +152,7 @@
                                                 <exclude reference="rBY-nZ-eAD"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=compact" ambiguous="YES">
-                                            <rect key="frame" x="0.0" y="202" width="96" height="98"/>
+                                        <variation key="heightClass=compact">
                                             <mask key="constraints">
                                                 <include reference="rBY-nZ-eAD"/>
                                             </mask>
@@ -172,8 +173,7 @@
                                         <exclude reference="X6i-Sp-ipJ"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=compact" axis="vertical" misplaced="YES" spacing="0.0">
-                                    <rect key="frame" x="484" y="20" width="96" height="300"/>
+                                <variation key="heightClass=compact" axis="vertical" spacing="0.0">
                                     <mask key="constraints">
                                         <include reference="7Pz-jN-axl"/>
                                         <include reference="CiE-xa-lHT"/>
@@ -261,6 +261,7 @@
                                 <exclude reference="1wS-pQ-B8e"/>
                                 <include reference="ZUg-fm-Qd4"/>
                                 <exclude reference="cFz-RO-cCu"/>
+                                <exclude reference="cx4-Zk-v8q"/>
                                 <exclude reference="6wh-5C-Pyo"/>
                                 <exclude reference="7Mv-4V-kqG"/>
                                 <exclude reference="R27-YQ-AnC"/>
@@ -305,6 +306,7 @@
                         <outlet property="penalty1Img" destination="Gqg-sj-9VC" id="cFR-58-5LW"/>
                         <outlet property="penalty2Img" destination="zvT-Hd-AQG" id="9e8-0Y-LiE"/>
                         <outlet property="penalty3Img" destination="DBO-Ab-3BE" id="rxs-g7-UFh"/>
+                        <outlet property="whistleImg" destination="isC-yP-9Vs" id="K8T-QG-tYU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
