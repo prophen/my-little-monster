@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var penalty1Img: UIImageView!
     @IBOutlet weak var penalty2Img: UIImageView!
     @IBOutlet weak var penalty3Img: UIImageView!
+    @IBOutlet weak var restartBtn: UIButton!
     
     let DIM_ALPHA: CGFloat = 0.2
     let OPAQUE: CGFloat = 1.0
@@ -47,7 +48,7 @@ class ViewController: UIViewController {
         penalty2Img.alpha = DIM_ALPHA
         penalty3Img.alpha = DIM_ALPHA
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "itemDroppedOnCharacter:", name: "onTargetDropped", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ViewController.itemDroppedOnCharacter(_:)), name: "onTargetDropped", object: nil)
 
         do {
             let resourcePath = NSBundle.mainBundle().pathForResource("cave-music", ofType: "mp3")!
@@ -100,13 +101,13 @@ class ViewController: UIViewController {
             timer.invalidate()
         }
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: "changeGameState", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(3.0, target: self, selector: #selector(ViewController.changeGameState), userInfo: nil, repeats: true)
     }
     
     func changeGameState() {
         
         if !monsterHappy {
-            penalties++
+            penalties += 1
             
             sfxSkull.play()
             
@@ -120,9 +121,7 @@ class ViewController: UIViewController {
             } else if penalties >= 3 {
                 penalty3Img.alpha = OPAQUE
             } else {
-                penalty1Img.alpha = DIM_ALPHA
-                penalty2Img.alpha = DIM_ALPHA
-                penalty3Img.alpha = DIM_ALPHA
+                dimPenaltyAlpha()
             }
             
             if penalties >= MAX_PENALTIES {
@@ -174,8 +173,21 @@ class ViewController: UIViewController {
         timer.invalidate()
         monsterImg.playDeathAnimation()
         sfxDeath.play()
-      
-        
+        restartBtn.hidden = false
+    }
+    
+    @IBAction func onRestartPressed(sender: AnyObject) {
+        restartGame()
+    }
+    
+    func restartGame() {
+        isGameOver = false
+        penalties = 0
+        monsterHappy = true
+        dimPenaltyAlpha()
+        startTimer()
+        restartBtn.hidden = true
+        monsterImg.playIdleAnimation()
         
     }
     
@@ -190,5 +202,10 @@ class ViewController: UIViewController {
         whistleImg.userInteractionEnabled = false
     }
 
+    func dimPenaltyAlpha() {
+        penalty1Img.alpha = DIM_ALPHA
+        penalty2Img.alpha = DIM_ALPHA
+        penalty3Img.alpha = DIM_ALPHA
+    }
 }
 
