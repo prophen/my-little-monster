@@ -19,6 +19,8 @@ class MonsterImg: UIImageView {
         playIdleAnimation()
     }
     
+    
+    
     func playIdleAnimation() {
         
         self.image = UIImage(named: "idle1.png")

@@ -38,6 +38,7 @@
 		E63C406D1C9426DA002FC0F2 /* DragImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragImg.swift; sourceTree = "<group>"; };
 		E678D8751C9E7ECE00B91E58 /* whistle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = whistle.mp3; sourceTree = "<group>"; };
 		E682B99A1C9558E900819B6D /* MonsterImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterImg.swift; sourceTree = "<group>"; };
+		E6B8B5521CA90AB200E41452 /* CurseCasual.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = CurseCasual.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +71,7 @@
 		E63C405A1C941A1B002FC0F2 /* mylittlemonster */ = {
 			isa = PBXGroup;
 			children = (
+				E6B8B5521CA90AB200E41452 /* CurseCasual.ttf */,
 				E678D8751C9E7ECE00B91E58 /* whistle.mp3 */,
 				E60064E91C977D41004A2AB4 /* bite.wav */,
 				E60064EA1C977D41004A2AB4 /* cave-music.mp3 */,
