@@ -29,7 +29,7 @@ class MonsterImg: UIImageView {
     
     
     func playIdleAnimation() {
-        
+        if self.name == "Golem" {
         self.image = UIImage(named: "idle1.png")
         
         self.animationImages = nil
@@ -44,23 +44,54 @@ class MonsterImg: UIImageView {
         self.animationDuration = 0.8
         self.animationRepeatCount = 0
         self.startAnimating()
+        }
+        else {
+            self.image = UIImage(named: "idleGopher1.png")
+            
+            self.animationImages = nil
+            
+            var imgArray = [UIImage]()
+            for var x = 1; x <= 4; x += 1 {
+                let img = UIImage(named: "idleGopher\(x).png")
+                imgArray.append(img!)
+            }
+            
+            self.animationImages = imgArray
+            self.animationDuration = 0.8
+            self.animationRepeatCount = 0
+            self.startAnimating()        }
     }
     
     func playDeathAnimation() {
-        
-        self.image = UIImage(named: "dead5.png")
-        
-        self.animationImages = nil
-        
-        var imgArray = [UIImage]()
-        for var x = 1; x <= 5; x += 1 {
-            let img = UIImage(named: "dead\(x).png")
-            imgArray.append(img!)
-        }
-        
-        self.animationImages = imgArray
-        self.animationDuration = 0.8
-        self.animationRepeatCount = 1
-        self.startAnimating()
+        if self.name == "Golem" {
+            self.image = UIImage(named: "dead5.png")
+            
+            self.animationImages = nil
+            
+            var imgArray = [UIImage]()
+            for var x = 1; x <= 5; x += 1 {
+                let img = UIImage(named: "dead\(x).png")
+                imgArray.append(img!)
+            }
+            
+            self.animationImages = imgArray
+            self.animationDuration = 0.8
+            self.animationRepeatCount = 1
+            self.startAnimating()
+        } else {
+            self.image = UIImage(named: "hideGopher6.png")
+            
+            self.animationImages = nil
+            
+            var imgArray = [UIImage]()
+            for var x = 1; x <= 6; x += 1 {
+                let img = UIImage(named: "hideGopher\(x).png")
+                imgArray.append(img!)
+            }
+            
+            self.animationImages = imgArray
+            self.animationDuration = 0.8
+            self.animationRepeatCount = 1
+            self.startAnimating()        }
     }
 }
