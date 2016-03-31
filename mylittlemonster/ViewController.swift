@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var penalty2Img: UIImageView!
     @IBOutlet weak var penalty3Img: UIImageView!
     @IBOutlet weak var restartBtn: UIButton!
+    @IBOutlet weak var chooseGolemBtn: UIButton!
+    @IBOutlet weak var chooseMinerBtn: UIButton!
+    @IBOutlet weak var chooseView: UIView!
     
     let DIM_ALPHA: CGFloat = 0.2
     let OPAQUE: CGFloat = 1.0
@@ -76,11 +79,20 @@ class ViewController: UIViewController {
         }
         
         disableNeedsItems()
-        startTimer()
-        monsterHappy = true
-        
     }
 
+    
+    @IBAction func onRestartPressed(sender: AnyObject) {
+        startGame()
+    }
+    
+    @IBAction func onChooseGolemPressed(sender: AnyObject) {
+        
+        choosePet("Golem")
+    }
+    @IBAction func onChooseMinerPressed(sender: AnyObject) {
+        choosePet("Miner")
+    }
     func itemDroppedOnCharacter(notif: AnyObject) {
         monsterHappy = true
         disableNeedsItems()
@@ -166,7 +178,14 @@ class ViewController: UIViewController {
             monsterHappy = false
         }
     }
-    
+
+    func choosePet(name: String) {
+        chooseView.hidden = true
+        monsterImg.name = name
+        startGame()
+        
+        
+    }
     func gameOver() {
         isGameOver = true
         disableNeedsItems()
@@ -176,15 +195,12 @@ class ViewController: UIViewController {
         restartBtn.hidden = false
     }
     
-    @IBAction func onRestartPressed(sender: AnyObject) {
-        restartGame()
-    }
-    
-    func restartGame() {
+    func startGame() {
         isGameOver = false
         penalties = 0
         monsterHappy = true
         dimPenaltyAlpha()
+        disableNeedsItems()
         startTimer()
         restartBtn.hidden = true
         monsterImg.playIdleAnimation()
