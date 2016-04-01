@@ -11,7 +11,10 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var monsterImg: MonsterImg!
+    @IBOutlet weak var golemView: UIView!
+    
+    @IBOutlet weak var minerView: UIView!
+    @IBOutlet weak var chooseView: UIView!
     @IBOutlet weak var foodImg: DragImg!
     @IBOutlet weak var heartImg: DragImg!
     @IBOutlet weak var whistleImg: DragImg!
@@ -21,12 +24,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var restartBtn: UIButton!
     @IBOutlet weak var chooseGolemBtn: UIButton!
     @IBOutlet weak var chooseMinerBtn: UIButton!
-    @IBOutlet weak var chooseView: UIView!
+    @IBOutlet weak var golemImg: MonsterImg!
+    @IBOutlet weak var gopherImg: MonsterImg!
     
     let DIM_ALPHA: CGFloat = 0.2
     let OPAQUE: CGFloat = 1.0
     let MAX_PENALTIES = 3
     
+    var monsterImg: MonsterImg!
     var penalties = 0
     var timer: NSTimer!
     var monsterHappy = false
@@ -87,11 +92,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func onChooseGolemPressed(sender: AnyObject) {
-        
+        monsterImg = golemImg
+        golemView.hidden = false
         choosePet("Golem")
     }
     @IBAction func onChooseMinerPressed(sender: AnyObject) {
+        monsterImg = gopherImg
+        minerView.hidden = false
         choosePet("Miner")
+        
     }
     func itemDroppedOnCharacter(notif: AnyObject) {
         monsterHappy = true
@@ -181,6 +190,7 @@ class ViewController: UIViewController {
 
     func choosePet(name: String) {
         chooseView.hidden = true
+        
         monsterImg.name = name
         startGame()
         
